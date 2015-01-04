@@ -100,8 +100,7 @@ install_arch () {
     pacman -S syslinux gptfdisk
 
     syslinux-install_update -iam
-    nano /boot/syslinux/syslinux.cfg
-
+    sed -i 's@APPEND root=/dev/sda3 rw@APPEND root=/dev/mapper/root rootflags=subvol=__active/rootvol cryptdevice=/dev/sda2:root rw@' /boot/syslinux/syslinux.cfg
 EOF
 
     umount /mnt/{home,var,boot}
