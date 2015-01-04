@@ -97,6 +97,7 @@ install_arch () {
 
     mkinitcpio -p linux
 
+    pacman-db-upgrade
     pacman -S syslinux gptfdisk
 
     syslinux-install_update -iam
