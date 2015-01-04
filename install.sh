@@ -19,10 +19,10 @@ partition_drive () {
     parted --script --align optimal -- $DEV mkpart primary ext2 1% 2% 
     echo "Made boot partition"
     
-    parted --script --align optimal -- $DEV mkpart primary ext4 2% 99%
+    V mkpart primary ext4 2% 99%
     echo "Made root partition"
-    
-    parted --script toggle 1 boot
+
+    parted --script --align optimal -- $DEV toggle 1 boot
     echo "Set boot bootable"
     
     make_filesystems
