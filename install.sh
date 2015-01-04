@@ -102,7 +102,7 @@ install_arch () {
     syslinux-install_update -iam
     nano /boot/syslinux/syslinux.cfg
 
-    EOF
+EOF
 
     umount /mnt/{home,var,boot}
     umount /mnt
@@ -115,3 +115,5 @@ main () {
     make_filesystems
     install_arch
 }
+
+main
